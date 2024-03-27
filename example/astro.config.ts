@@ -16,15 +16,17 @@ export default defineConfig({
             label: 'API (auto-generated)',
           },
           typeDoc: {
-            plugin: ['typedoc-plugin-mdn-links'],
+            plugin: ['typedoc-plugin-no-inherit'],
+            readme: 'none',
+            gitRemote: 'https://github.com/fabricjs/fabric.js/blob',
+            gitRevision: 'v6.0.0-beta20',
+            entryFileName: 'index.md',
+            includeVersion: true,
+            sourceLinkTemplate: 'https://github.com/fabricjs/fabric.js/blob/{gitRevision}/{path}#L{line}',
           },
         }),
       ],
       sidebar: [
-        {
-          label: 'Guides',
-          items: [{ label: 'Example Guide', link: '/guides/example/' }],
-        },
         typeDocSidebarGroup,
       ],
       title: 'Starlight TypeDoc Example',

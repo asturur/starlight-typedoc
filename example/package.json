@@ -19,12 +19,15 @@
   },
   "dependencies": {
     "@astrojs/starlight": "0.15.1",
+    "@types/jsdom": "^21.1.6",
     "astro": "4.0.6",
+    "fabric": "6.0.0-beta20",
     "sharp": "0.32.6",
     "starlight-typedoc": "workspace:*",
-    "typedoc": "0.25",
+    "typedoc": "~0.25.12",
     "typedoc-plugin-markdown": "4.0.0-next.45",
-    "typedoc-plugin-mdn-links": "3.0.3"
+    "typedoc-plugin-mdn-links": "3.0.3",
+    "typescript": "~5.3.3"
   },
   "engines": {
     "node": ">=18.14.1"
