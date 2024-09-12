@@ -10,21 +10,24 @@ export default defineConfig({
       },
       plugins: [
         starlightTypeDoc({
-          entryPoints: ['../fixtures/basics/src/index.ts'],
-          tsconfig: '../fixtures/basics/tsconfig.json',
+          entryPoints: ['./node_modules/fabric/fabric.ts'],
+          output: 'api',
+          tsconfig: './node_modules/fabric/typedoc.config.json',
           sidebar: {
             label: 'API (auto-generated)',
           },
           typeDoc: {
-            plugin: ['typedoc-plugin-mdn-links'],
+            plugin: ['typedoc-plugin-no-inherit'],
+            readme: 'none',
+            gitRemote: 'https://github.com/fabricjs/fabric.js/blob',
+            gitRevision: 'v6.0.0-beta20',
+            entryFileName: 'index.md',
+            includeVersion: true,
+            sourceLinkTemplate: 'https://github.com/fabricjs/fabric.js/blob/{gitRevision}/{path}#L{line}',
           },
         }),
       ],
       sidebar: [
-        {
-          label: 'Guides',
-          items: [{ label: 'Example Guide', link: '/guides/example/' }],
-        },
         typeDocSidebarGroup,
       ],
       title: 'Starlight TypeDoc Example',
